@@ -19,7 +19,7 @@
   $this->transmission = $transmission;
   $this->motor = $motor;
   }
-
+}
   $porsche = new Car("2014 Porsche 911", 114991, 7864, "manual", "gas");
   $ford = new Car("2011 Ford 450 Superduty", 55995, 14241, "automatic","diesel");
   $lexus = new Car("2013 Lexus RX 350", 44700, 20000, "Automatic", "Gas");
@@ -84,7 +84,7 @@
 
 
                         foreach ($cars_matching_search as $car) {
-                            echo "<li> $car->make_model </li>";
+                            echo "<li> $car->model </li>";
                             echo "<ul>";
                                 echo "<li> $$car->price </li>";
                                 echo "<li> Miles: $car->miles </li>";
