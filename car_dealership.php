@@ -2,10 +2,30 @@
          class Car
   {
   public $make_model;
-  public $price;
-  public $miles;
-  public $transmission;
-  public $motor;
+  private $price;
+  private $miles;
+  private $transmission;
+  private $motor;
+
+
+
+  function getPrice()
+  {
+      return $this->price;
+  }
+ function getMiles()
+ {
+     return $this->miles;
+ }
+
+function getTransmission()
+{
+    return $this->transmission;
+}
+function getMotor()
+{
+    return $this->motor;
+}
 
   function worthBuying($max_price)
  {
@@ -86,10 +106,10 @@
                         foreach ($cars_matching_search as $car) {
                             echo "<li> $car->model </li>";
                             echo "<ul>";
-                                echo "<li> $$car->price </li>";
-                                echo "<li> Miles: $car->miles </li>";
-                                echo "<li>Transmission: $car->transmission</li>";
-                                echo "<li>Motor: $car->motor</li>";
+                                echo "<li>Price:$". $car->getPrice() . "</li>";
+                                echo "<li>Miles:" . $car->getMiles() . "</li>";
+                                echo "<li>Transmission:" . $car->getTransmission() . "</li>";
+                                echo "<li>Motor:" . $car->getMotor() . "</li>";
                             echo "</ul>";
                         }
                     ?>
