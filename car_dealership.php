@@ -7,6 +7,27 @@
   public $transmission;
   public $motor;
 
+  function worthBuying($max_price)
+ {
+     return $this->price < $max_price;
+ }
+  function __construct($make_model, $price, $miles, $transmission, $motor)
+  {
+  $this->model = $make_model;
+  $this->price = $price;
+  $this->miles = $miles;
+  $this->transmission = $transmission;
+  $this->motor = $motor;
+  }
+
+  $porsche = new Car("2014 Porsche 911", 114991, 7864, "manual", "gas");
+  $ford = new Car("2011 Ford 450 Superduty", 55995, 14241, "automatic","diesel");
+  $lexus = new Car("2013 Lexus RX 350", 44700, 20000, "Automatic", "Gas");
+  $mercedes = new Car("Mercedes Benz CLS550", 39900, 20000, "automatic","Gas");
+
+
+    /*
+}
 
   }
   $porsche = new Car();
@@ -14,6 +35,7 @@
   $porsche->price = 114991;
   $porsche->miles = 7864;
   $porsche->transmission = "manual";
+  $porsche->motor = "Gas";
 
   $ford = new Car();
   $ford->make_model = "2011 Ford 450 Superduty";
@@ -36,16 +58,14 @@
   $mercedes ->transmission = "Automatic";
   $mercedes ->motor = "Gas";
 
+  */
+
         $cars = array($porsche, $ford, $lexus, $mercedes);
 
-        function worthBuying($max_price)
-        {
-            return $this->price < $max_price;
-        }
 
         $cars_matching_search = array();
         foreach ($cars as $car) {
-            if ($car->worthBuying($_GET["price"])) {
+            if ($car->worthBuying($_GET['price'])) {
                 array_push($cars_matching_search, $car);
             }
         }
