@@ -38,7 +38,7 @@
 
         $cars = array($porsche, $ford, $lexus, $mercedes);
 
-        $cars_matching search = array();
+        $cars_matching_search = array();
         foreach ($cars as $car) {
             if ($car->price < $_GET["price"]) {
                 array_push($cars_matching_search, $car);
@@ -67,6 +67,3 @@
                 </ul>
             </body>
             </html>
-
-
-        
