@@ -61,6 +61,8 @@
                             echo "<ul>";
                                 echo "<li> $$car->price </li>";
                                 echo "<li> Miles: $car->miles </li>";
+                                echo "<li>Transmission: $car->transmission</li>";
+                                echo "<li>Motor: $car->motor</li>"
                             echo "</ul>";
                         }
                     ?>
