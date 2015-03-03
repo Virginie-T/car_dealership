@@ -6,6 +6,7 @@
   private $miles;
   private $transmission;
   private $motor;
+  public $image;
 
 
 
@@ -31,7 +32,7 @@ function getMotor()
  {
      return $this->price < $max_price;
  }
-  function __construct($make_model, $price, $miles, $transmission, $motor)
+  function __construct($make_model, $price, $miles, $transmission, $motor, $image)
   {
   $this->model = $make_model;
   $this->price = $price;
@@ -40,10 +41,10 @@ function getMotor()
   $this->motor = $motor;
   }
 }
-  $porsche = new Car("2014 Porsche 911", 114991, 7864, "manual", "gas");
-  $ford = new Car("2011 Ford 450 Superduty", 55995, 14241, "automatic","diesel");
-  $lexus = new Car("2013 Lexus RX 350", 44700, 20000, "Automatic", "Gas");
-  $mercedes = new Car("Mercedes Benz CLS550", 39900, 20000, "automatic","Gas");
+  $porsche = new Car("2014 Porsche 911", 114991, 7864, "manual", "gas",src = "http://pictures.topspeed.com/IMG/crop/201406/porsche-991-turbo-st_600x0w.jpg");
+  $ford = new Car("2011 Ford 450 Superduty", 55995, 14241, "automatic","diesel",);
+  $lexus = new Car("2013 Lexus RX 350", 44700, 20000, "Automatic", "Gas",);
+  $mercedes = new Car("Mercedes Benz CLS550", 39900, 20000, "automatic","Gas",);
 
 
     /*
