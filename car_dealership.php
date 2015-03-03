@@ -8,7 +8,10 @@
   private $motor;
   public $image;
 
-
+ // $porsche->image = "images/porsche.jpg";
+ // $ford->image = "images/ford450.jpg";
+ // $lexus->image = "images/lexus.jpg";
+ // $mercedes->image = "images/mercedes.jpg";
 
   function getPrice()
   {
@@ -32,7 +35,13 @@ function getMotor()
  {
      return $this->price < $max_price;
  }
-  function __construct($make_model, $price, $miles, $transmission, $motor, $image)
+
+ function worthMileage($max_miles)
+{
+    return $this->miles < $max_miles;
+}
+
+  function __construct($make_model, $price, $miles, $transmission, $motor)
   {
   $this->model = $make_model;
   $this->price = $price;
@@ -41,10 +50,16 @@ function getMotor()
   $this->motor = $motor;
   }
 }
-  $porsche = new Car("2014 Porsche 911", 114991, 7864, "manual", "gas",src = "http://pictures.topspeed.com/IMG/crop/201406/porsche-991-turbo-st_600x0w.jpg");
-  $ford = new Car("2011 Ford 450 Superduty", 55995, 14241, "automatic","diesel",);
-  $lexus = new Car("2013 Lexus RX 350", 44700, 20000, "Automatic", "Gas",);
-  $mercedes = new Car("Mercedes Benz CLS550", 39900, 20000, "automatic","Gas",);
+  $porsche = new Car("2014 Porsche 911", 114991, 7864, "manual", "gas");
+  $ford = new Car("2011 Ford 450 Superduty", 55995, 14241, "automatic","diesel");
+  $lexus = new Car("2013 Lexus RX 350", 44700, 20000, "Automatic", "Gas");
+  $mercedes = new Car("Mercedes Benz CLS550", 39900, 20000, "automatic","Gas");
+
+  $porsche->image = "images/porsche.jpg";
+  $ford->image = "images/ford450.jpg";
+  $lexus->image = "images/lexus.jpg";
+  $mercedes->image = "images/mercedes.jpg";
+
 
 
     /*
@@ -86,8 +101,9 @@ function getMotor()
 
         $cars_matching_search = array();
         foreach ($cars as $car) {
-            if ($car->worthBuying($_GET['price'])) {
+            if ($car->worthBuying($_GET['price']) && $car->worthMileage($_GET['mile'])) {
                 array_push($cars_matching_search, $car);
+
             }
         }
 
@@ -107,6 +123,7 @@ function getMotor()
                         foreach ($cars_matching_search as $car) {
                             echo "<li> $car->model </li>";
                             echo "<ul>";
+                                echo "<li><img src='$car->image'></li>";
                                 echo "<li>Price:$". $car->getPrice() . "</li>";
                                 echo "<li>Miles:" . $car->getMiles() . "</li>";
                                 echo "<li>Transmission:" . $car->getTransmission() . "</li>";
