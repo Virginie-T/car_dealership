@@ -22,4 +22,4 @@ This app let the user enter a maximum price and a maximum mileage and it will re
 >Direct browser to root directory file.
 
 
-####Copyright (c) 2015 Bojana Skarich & Virginie Trubiano
+####Copyright (c) 2015 Virginie Trubiano & Brett Moore
